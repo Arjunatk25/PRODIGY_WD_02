@@ -21,4 +21,4 @@ import mongoose from "mongoose";
  },{
     timestamps:true,
  })
-export const Employee = mongoose.model('Cat',empSchema);
+export const Employee = mongoose.model('Emp-manage',empSchema);
