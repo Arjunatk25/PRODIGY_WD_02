@@ -2,7 +2,8 @@ import express from "express";
 import { PORT, mongodbURL } from "./config.js";
 import mongoose from "mongoose";
 import { Employee } from "./models/employModel.js";
-import employeeRoute from "./routes/employeeRoute.js";
+import router from "./routes/employeeRoute.js";
+import cors from 'cors';
 
 const app = express();
 // middleware for parsing
@@ -13,7 +14,12 @@ app.get("/", (req, res) => {
     console.log(req);
     return res.status(200).send("Welcome to day one of mern STack development ");
 });
-app.use('/employee', employeeRoute);
+// middleware for handling for cors
+
+app.use(cors());
+
+// for routes
+app.use('/employee', router);
 
 
 mongoose

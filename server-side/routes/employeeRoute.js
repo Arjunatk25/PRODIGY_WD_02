@@ -1,5 +1,5 @@
 import express from "express";
-import { Employee } from "../models/employModel";
+import { Employee } from "../models/employModel.js";
 
 
 const router = express.Router();
@@ -90,7 +90,7 @@ router.put("/:id", async (req, res) => {
     }
 });
 // route for deleting a employee detail 
-ReadableStreamDefaultController.delete("/:id", async (req, res) => {
+router.delete("/:id", async (req, res) => {
     try {
 
         const { id } = req.params;
